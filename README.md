@@ -35,7 +35,9 @@ This system ingests historical backgammon match logs, parses turn-by-turn positi
 3. **Proposed Multi-Layer Perceptron (MLP):** A deep feedforward neural network engineered in PyTorch to generalize across non-linear relations on the board.
 
 ---
-
+## 📊 Dataset
+The dataset is from HuggingFcae:
+https://huggingface.co/datasets/ArkadiumInc/ArkadiumBackgammon
 ## 📋 Core ML Pipeline Steps
 
 To construct this predictor, we proceed through the following structured engineering steps:

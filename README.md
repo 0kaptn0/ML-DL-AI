@@ -1,4 +1,4 @@
-# 1: 🩺 Medical Insurance Price Prediction
+# 1: 🩺 fork-of-medical-insurance-charges-age-smokers (1).ipynb
 
 This project analyzes medical insurance data to predict charges using regression techniques.
 
@@ -21,7 +21,7 @@ The dataset is from Kaggle:
 #
 #
 
-# 2: 🎲 Expert Backgammon Move Predictor using Machine Learning & Deep Learning
+# 2: 🎲 Predicting_Top3_moves_backgammon.ipynb
 
 Welcome to the **Backgammon AI Engine**, an advanced machine learning and deep learning project designed to evaluate and predict the optimal expert moves for any valid game state, utilizing professional-level gameplay logs from competitive matches on Arkadium.
 

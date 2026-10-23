@@ -1,4 +1,4 @@
-# Two-Stage Real-Time Traffic Sign Detection and Classification Pipeline
+# 1: Two-Stage Traffic Sign Detection and Classification Pipeline
 
 This repository implements a production-grade, two-stage computer vision cascade for real-time Traffic Sign Detection and Classification, combining state-of-the-art Deep Learning models optimized for deployment on edge devices and embedded systems.
 
@@ -123,3 +123,33 @@ End-to-End Throughput            | 3.7                 FPS | 46.4               
 
 1. **GTSRB (German Traffic Sign Recognition Benchmark)**: Contains 39,209 training images and 12,630 testing images across 43 different traffic sign categories.
 2. **GTSDB (German Traffic Sign Detection Benchmark)**: Full-resolution highway images containing annotated traffic signs for object detection.
+
+# 
+#
+#
+#
+# 2: BMI and Sex Prediction from Spine X-ray Images
+
+This repository contains a PyTorch-based deep learning pipeline designed to predict both **Body Mass Index (BMI)** (regression) and **Sex** (binary classification) simultaneously from spine X-ray images using multi-task learning.
+
+## 📌 Project Overview
+Predicting clinical and physiological indicators directly from medical imaging helps in non-invasive patient assessment. This project leverages transfer learning, robust data preprocessing, and validation frameworks to extract subtle anatomical patterns from spine X-rays.
+
+## 🛠️ Key Features
+- **Multi-Task Learning Architecture**: A unified network predicting categorical (Sex) and continuous (BMI) targets simultaneously using task-specific heads.
+- **SOTA Architectures**: Features custom CNN baselines alongside transfer-learning setups utilizing pre-trained architectures like **ResNet-18**, **DenseNet-121**, and **EfficientNet-B0**.
+- **Patient-Level Data Splitting**: Avoids data leakage by ensuring images from the same anonymized patient ID (`anon_id`) never span both train and validation splits.
+- **Robust Validation**: Implements 5-Fold Cross-Validation ensembled predictions to combat variance and boost Kaggle benchmark performance.
+- **Explainability (Grad-CAM)**: Integrates Gradient-weighted Class Activation Mapping to visualize and audit anatomical regions of interest driving classification decisions.
+
+## 📂 Dataset Structure
+- `train_images/` & `test_images/`: Raw X-ray scan files.
+- `train_labels.csv`: Ground truth metadata including `anon_id`, `sex`, and `bmi`.
+- `sample_submission.csv`: Target structure for hold-out predictions.
+
+## 📈 Results Summary
+- **K-Fold CV Average Accuracy (Sex)**: ~89.8%
+- **K-Fold CV Average Loss (BMI)**: ~0.219 (Smooth L1 Loss)
+
+## ⚖️ Deployment & Fairness Considerations
+As analyzed within the notebook, immediate clinical deployment is recommended against until external multi-center validations are executed. Fairness audits indicated slight demographic performance variances, underscoring the need for further robust clinical auditing and uncertainty quantification.
